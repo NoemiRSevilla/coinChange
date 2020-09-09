@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercises</title>
+</head>
+<body>
+
+<script>
+    function maxMinAvg(arr) {
+        var max;
+        var min;
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            max = arr[0];
+            min = arr[0];
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+            sum += arr[i];
+        }
+        var avg = sum / arr.length;
+        return "The minimum is " + min + ", the maximum is " + max + ", the average is " + avg;
+    }
+    // console.log(maxMinAvg([23, 123, 765, 12, -3]));
+
+    function fizzBuzz(n){
+        if (isNaN(n)) {
+            console.log(n + "must be a number")
+        }
+        else if (n < 0) {
+            console.log(n + " need to be made into a positive number");
+        }
+        for (var i = 1; i <= n; i++){
+            if (i % 3 == 0 && i % 5 == 0){
+                console.log("FizzBuzz");
+            }
+            else if (i % 3 == 0 && i % 5 != 0){
+                console.log("Fizz");
+            }
+            else if (i % 3 != 0 && i % 5 == 0){
+                console.log("Buzz");
+            }
+            else{
+                console.log(i);
+            }
+        }
+    }
+    // console.log(fizzBuzz(-20));
+
+    function bracesValid(str){
+        var count = 0;
+        for (let x =0; x < str.length; x++){
+            if (str[x] == "(" || str[x] == "[" || str[x] == "{" ) {
+                // console.log("adding");
+                count +=1;
+            }
+            else if (str[x] == ")" || str[x] == "]" || str[x] == "}"){
+                // console.log("subtracting");
+                count -=1;
+            }
+
+        }
+        if (count == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    // console.log(bracesValid( "(()){}{}[]" ));
+
+    function printArray(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+    }
+    // console.log("O(n)");
+
+    function findNth(arr, n) {
+        console.log(arr[n]);
+    }
+    // console.log("O(1)");
+
+    function halving(n) {
+        var count = 0;
+        while (n > 1) {
+            n = n / 2;
+            count++;
+        }
+        return count;
+    }
+    // console.log("O(n)");
+
+    function identityMatrix(n) {
+        var matrix = [];
+        for (var i = 0; i < n; i++) {
+            var row = [];
+            for (var j = 0; j < n; j++) {
+                if (j == i) {
+                    row.push(1);
+                }
+                else {
+                    row.push(0);
+                }
+            }
+            matrix.push(row);
+        }
+        return matrix;
+    }
+    // console.log("O(n)^2");
+
+    function coinChange(num){
+        var total = {
+            "dollars" : 0,
+            "quarters" : 0,
+            "dimes" : 0,
+            "nickels" : 0,
+            "pennies" : 0,
+        };
+        
+        while (num > 0){
+            if(num > 100){
+                console.log("adding dollar");
+                total.dollar +=1;
+                num -= 100;
+            }
+            else if (num > 25){
+                console.log("adding quarter");
+                total.quarter +=1;
+                num -=25;
+            }
+            else if (num > 10){
+                console.log("adding dime");
+                total.dime +=1;
+                num -=10;
+            }
+            else if (num > 5){
+                console.log("adding nickel");
+                total.nickel +=1;
+                num -=5;
+            }
+            else{
+                console.log("adding penny")
+                total.penny +=1;
+                num -=1;
+            }
+
+        }
+        
+        return total;
+    }
+
+    console.log(coinChange(729));
+
+    function userLanguages(users){
+        for (let i = 0; i < users.length; i++){
+            allUsers = [
+            {
+                fname: FirstName,
+                lname: LastName,
+                languages: [],
+                interests: {
+                    music: [],
+                    dance: [],
+                    television: []
+                }
+            }
+            ]
+        }
+    }
+</script>
+</body>
+</html>
